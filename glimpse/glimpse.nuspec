@@ -3,12 +3,12 @@
   <metadata>
     <id>glimpse</id>
     <version>0.1.2</version>
-    <packageSourceUrl>https://github.com/corbob/ChocoPackages/glimpse</packageSourceUrl>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/glimpse</packageSourceUrl>
     <owners>corbob</owners>
     <title>Glimpse (Install)</title>
     <authors>Glimpse Editor</authors>
     <projectUrl>https://glimpse-editor.org/</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/glimpse.png</iconUrl>-->
+    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/glimpse.png</iconUrl>
     <licenseUrl>https://github.com/glimpse-editor/Glimpse/blob/dev-g210/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/glimpse-editor/Glimpse</projectSourceUrl>
