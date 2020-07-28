@@ -49,9 +49,9 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!--<mailingListUrl></mailingListUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <tags>winsize2</tags>
-    <summary>__REPLACE__</summary>
+    <summary>WinSize: Move windows automatically to a predefined place.</summary>
     <description>WinSize: Move windows automatically to a predefined place. Resize width and/or height. Moving OR changing size possible. Supports text CONTAINED in titles (like "Notepad") to identify window.</description>
-    <releaseNotes>No release notes available. Not updated since 2013.</releaseNotes>
+    <!-- <releaseNotes>No release notes available. Not updated since 2013.</releaseNotes> --> 
     <!-- =============================== -->      
 
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
