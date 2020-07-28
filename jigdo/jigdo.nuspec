@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Richard Atterer, Steve McIntyre</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.einval.com/~steve/software/jigdo/</projectUrl>
-            <!-- <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/jigdo.png</iconUrl> -->
+    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/jigdo.png</iconUrl>
 
     <!-- <copyright>Year Software Vendor</copyright> -->
     <!-- If there is a license Url available, it is required for the community feed -->
