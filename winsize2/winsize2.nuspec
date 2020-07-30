@@ -42,12 +42,12 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/winsize2.png</iconUrl>-->
     <!-- <copyright>Year Software Vendor</copyright> -->
     <!-- If there is a license Url available, it is required for the community feed -->
-    <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>-->
-    <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
-    <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
-    <!--<mailingListUrl></mailingListUrl>-->
-    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <licenseUrl>https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://sourceforge.net/p/winsize2/</projectSourceUrl>
+    <docsUrl>https://sourceforge.net/p/winsize2/wiki/Home/</docsUrl>
+    <mailingListUrl>https://sourceforge.net/p/winsize2/discussion/</mailingListUrl>
+    <bugTrackerUrl>https://sourceforge.net/p/winsize2/_list/tickets</bugTrackerUrl>
     <tags>winsize2</tags>
     <summary>WinSize: Move windows automatically to a predefined place.</summary>
     <description>WinSize: Move windows automatically to a predefined place. Resize width and/or height. Moving OR changing size possible. Supports text CONTAINED in titles (like "Notepad") to identify window.</description>
