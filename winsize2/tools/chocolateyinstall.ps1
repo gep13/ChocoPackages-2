@@ -10,7 +10,8 @@ $packageArgs = @{
 
   softwareName   = 'winsize2*'
 
-  checksum       = '7D12D3613AC5190EF2C5258461347AE564EC1604EFDCF4B01AA69978CB9EC72C'
+  checksum       = '6A0BF6CC75A3A92B7BC41BDCFD2D528A230F13C629EF5FE83E273075431EA1CE'
+
   checksumType   = 'sha256'
 
 }
