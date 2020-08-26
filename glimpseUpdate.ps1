@@ -41,8 +41,5 @@ if([version]($Current.Version) -lt $latestVersion) {
 	foreach($currReplacement in $replacements){
 		(Get-Content $currReplacement.file).Replace($currReplacement.toReplace, $currReplacement.replaceWith) | Set-Content $currReplacement.file
 	}
-		
-#	(Get-Content "$install").Replace('[[URL]]', $($Latest.assets | Where-Object name -like '*i686*.msi' | Select-Object -ExpandProperty browser_download_url)) | Set-Content "$install"
-#	(Get-Content "$install").Replace('[[URL64]]', $($Latest.assets | Where-Object name -like '*x64*.msi' | Select-Object -ExpandProperty browser_download_url)) | Set-Content "$install"
-#	(Get-Content "$install").Replace('[[CHECKSUM]]', $($Latest.assets | Where-Object name -like '*x64*.msi' | Select-Object -ExpandProperty browser_download_url)) | Set-Content "$install"
-}
+	choco pack $nuspec --output-directory "'$($env:TEMP)'"
+	choco push $((Get-ChildItem $env:TEMP -Filter glimpse.*.nupkg).FullName) -s https://push.chocolatey.org
