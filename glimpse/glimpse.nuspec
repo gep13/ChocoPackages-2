@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>glimpse</id>
-    <version>0.1.2</version>
+    <version>[[VERSION]]</version>
     <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/glimpse</packageSourceUrl>
     <owners>corbob</owners>
     <title>Glimpse (Install)</title>
