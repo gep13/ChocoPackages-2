@@ -1,4 +1,4 @@
-﻿# IMPORTANT: Before releasing this package, copy/paste the next 2 lines into PowerShell to remove all comments from this file:
+# IMPORTANT: Before releasing this package, copy/paste the next 2 lines into PowerShell to remove all comments from this file:
 #   $f='c:\path\to\thisFile.ps1'
 #   gc $f | ? {$_ -notmatch "^\s*#"} | % {$_ -replace '(^.*?)\s*?[^``]#.*','$1'} | Out-File $f+".~" -en utf8; mv -fo $f+".~" $f
 
@@ -15,7 +15,7 @@ $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 #$fileLocation = '\\SHARE_LOCATION\to\INSTALLER_FILE'
 # Community Repo: Use official urls for non-redist binaries or redist where total package size is over 200MB
 # Internal/Organization: Download from internal location (internet sources are unreliable)
-$url        = '[[URL]]' # download url, HTTPS preferred
+$url        = 'https://api.github.com/repos/microsoft/Microsoft-Win32-Content-Prep-Tool/zipball/v1.8.2' # download url, HTTPS preferred
 # $url64      = '' # 64bit URL here (HTTPS preferred) or remove - if installer contains both (very rare), use $url
 
 $packageArgs = @{
@@ -32,7 +32,7 @@ $packageArgs = @{
   # To determine checksums, you can get that from the original site if provided. 
   # You can also use checksum.exe (choco install checksum) and use it 
   # e.g. checksum -t sha256 -f path\to\file
-  checksum      = '[[CHECKSUM]]'
+  checksum      = '2F8BD2D89C7FB84EEE9A27DE38E984BA72EC9A01A6E1E84420783F80E2A07E08'
   checksumType  = 'sha256' #default is md5, can also be sha1, sha256 or sha512
   # checksum64    = ''
   # checksumType64= 'sha256' #default is checksumType
@@ -147,5 +147,5 @@ Install-ChocolateyZipPackage @packageArgs # https://chocolatey.org/docs/helpers-
 
 # if removing $url64, please remove from here
 # despite the name "Install-ChocolateyZipPackage" this also works with 7z archives
-Install-ChocolateyZipPackage "$packageName" "$url" "$installDir" "$url64"
+# Install-ChocolateyZipPackage "$packageName" "$url" "$installDir" "$url64"
 ## END PORTABLE EXAMPLE

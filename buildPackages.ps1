@@ -1,6 +1,6 @@
 ﻿Remove-Item $PSScriptRoot\builds -Recurse -Force -ErrorAction SilentlyContinue
 New-Item $PSScriptRoot\builds\packages -ItemType Directory -Force
-$nuspecFiles = Get-ChildItem -Path $PSScriptRoot -Include *.nuspec -Recurse
+$nuspecFiles = Get-ChildItem -Path $PSScriptRoot\packages -Include *.nuspec -Recurse -Exclude chocotests\*
 foreach($nuspec in $nuspecFiles){
     Copy-Item -Recurse -Path $nuspec.DirectoryName -Destination "$PSScriptRoot\builds\$(split-path $nuspec.Directory -Leaf)" -Force
 }
