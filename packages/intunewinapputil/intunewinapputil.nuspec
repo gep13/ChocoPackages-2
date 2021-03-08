@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Microsoft</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool</projectUrl>
-    <iconUrl>https://assets.onestore.ms/cdnfiles/onestorerolling-1509-17011/shell/v1_2/images/logo/microsoft.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/intunewinapputil.png</iconUrl>
     <!-- <copyright>Year Software Vendor</copyright> -->
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/raw/master/Microsoft%20License%20Terms%20For%20Win32%20Content%20Prep%20Tool.pdf</licenseUrl>
