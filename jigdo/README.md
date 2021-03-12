@@ -1,3 +1,3 @@
 # jigdo
 
-The package source for this has been moved to [../packages/jigdo]
+[The package source for this has been moved](../packages/jigdo)
