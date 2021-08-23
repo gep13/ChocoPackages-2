@@ -1,0 +1,8 @@
+﻿
+
+VERIFICATION
+Run the following PowerShell script to download the file and verify it's hash:
+
+Invoke-WebRequest "https://github.com/wez/wezterm/releases/download/20210814-124438-54e29167/WezTerm-windows-20210814-124438-54e29167.zip" -OutFile "$($env:temp)\wezterm.zip"
+Get-FileHash "$($env:temp)\wezterm.zip" -Algorithm SHA256
+It's Hash should match that of the file stored in the package.
