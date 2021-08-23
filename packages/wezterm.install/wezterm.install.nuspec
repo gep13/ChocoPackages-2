@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces 
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements 
+-->
+
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>wezterm.install</id>
+    <version>2021.08.14.124438</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/wezterm/</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>Wez's Terminal (Install)</title>
+    <authors>Wez Furlong</authors>
+    <projectUrl>https://github.com/wez/wezterm</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/wezterm.png</iconUrl>
+    <copyright>2021 wez</copyright>
+    <licenseUrl>https://github.com/wez/wezterm/blob/main/LICENSE.md</licenseUrl>
+    <projectSourceUrl>https://github.com/wez/wezterm</projectSourceUrl>
+    <docsUrl>https://wezfurlong.org/wezterm/index.html</docsUrl>
+    <tags>wezterm wez terminal emulator</tags>
+    <summary>A GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust</summary>
+    <description># Wez's Terminal
+
+![WezTerm Icon](https://raw.githubusercontent.com/wez/wezterm/main/assets/icon/terminal.png) *A GPU-accelerated cross-platform terminal emulator and multiplexer written by [@wez](https://github.com/wez) and implemented in [Rust](https://www.rust-lang.org/)*
+
+User facing docs and guide at: https://wezfurlong.org/wezterm/
+
+![Screenshot](https://raw.githubusercontent.com/wez/wezterm/main/docs/screenshots/two.png)
+
+*Screenshot of wezterm on macOS, running vim*
+
+## Installation
+
+https://wezfurlong.org/wezterm/installation.html
+
+## Getting help
+
+This is a spare time project, so please bear with me.  There are a couple of channels for support:
+
+* You can use the [GitHub issue tracker](https://github.com/wez/wezterm/issues) to see if someone else has a similar issue, or to file a new one.
+* Start or join a thread in our [GitHub Discussions](https://github.com/wez/wezterm/discussions); if you have general
+  questions or want to chat with other wezterm users, you're welcome here!
+* There is a [Matrix room via Element.io](https://app.element.io/#/room/#wezterm:matrix.org)
+  for (potentially!) real time discussions.
+
+The GitHub Discussions and Element/Gitter rooms are better suited for questions
+than bug reports, but don't be afraid to use whichever you are most comfortable
+using and we'll work it out.</description>
+    <releaseNotes>See more details at: https://wezfurlong.org/wezterm/changelog.html#20210814-124438-54e29167
+
+* Fixed: ssh client would read /etc/ssh/config rather than the proper /etc/ssh/ssh_config
+* Updated: ssh client now processes Include statements in ssh config
+* x11: support for VoidSymbol in key assignments. Thanks to @digitallyserviced! #759
+* Fixed: UTF8-encoded-C1 control codes were not always recognized as control codes, and could result in a panic when later attempting to update the line. #768
+* Fixed: wezterm cli split-pane didn't use the current working dir of the source pane. #766
+* Fixed: double-click-drag selection could panic when crossing line boundaries #762
+* Fixed: wrong scaling for ligatures in Recursive Mono font #699
+* Fixed: incorrect Sixel HLS hue handling #775
+* Fixed: we now recognize the CSI 48:2:0:214:255m form of specifying true color text attributes #785
+* Fixed: split separators didn't respect tab_bar_at_bottom=true and were rendered in the wrong place #797
+* Improved: messaging around exit_behavior
+* Fixed: errors loading custom color schemes are now logged to the error log #794
+* Fixed: OSC 7 (current working directory) now works with paths that contain spaces and other special characters. Thanks to @Arvedui! #799
+* Changed: the homebrew tap is now a Cask that installs to the /Applications directory on macOS. Thanks to @laggardkernel!
+* New: bold/dim and/or italics are now synthesized for fonts when the matching font is not actually italic or doesn't match the requested weight. #815
+* Updated: conpty.dll to v1.9.1445.0; fixes color bar artifacts when resizing window and allows win32 console applications to use mouse events
+* Fixed: Windows: pane could linger after the process has died, closing only when a new pane/tab event occurs
+* Fixed: Windows: first character after wezterm ssh keyboard authention was swallowed #771
+* Fixed: Windows: detect window resizes while authenticating for wezterm ssh #696
+* Fixed: OSC 52 clipboard escape didn't work in the initial pane spawned in the multiplexer server #764
+* Fixed: splitting panes in multiplexer could fail after a network reconnect #781
+* Fixed: multiplexer now propagates toast notifications and color palette to client #489 #748
+* Fixed: neovim interprets drags as double clicks #823
+* New: CTRL+SHIFT+L is assigned to ShowDebugOverlay #641
+* Improved: antialiasing for undercurl. Thanks to @ModProg! #838
+* Fixed: wezterm start --cwd c:/ didn't run default_prog. Thanks to @exactly-one-kas! #851
+* Improved: skip_close_confirmation_for_processes_named now includes common windows shell processes cmd.exe, pwsh.exe and powershell.exe. #843
+* Fixed: don't keep the window alive after running something &amp; disown ; exit #839
+* Improved: we now draw sextant glyphs from the Unicode Symbols for Legacy Computing block (1FB00) when custom_block_glyphs is enabled.
+* Changed: COLORTERM=truecolor is now set in the environment. #875
+* New: wezterm cli spawn --new-window flag for creating a new window via the CLI #887
+* Fixed: closing last pane in a tab via CloseCurrentPane could cause the window to close #890
+* Improved: wezterm ls-fonts --list-system shows all available fonts, wezterm ls-fonts --text "hello" explains which fonts are used for each glyph in the supplied text
+* Fixed: mouse cursor is now Arrow rather than I-beam when the application in the terminal has enabled mouse reporting #859
+* Improved: DEC Special Graphics mode conformance and complete coverage of the graphics character set. Thanks to Autumn Lamonte! #891
+* Fixed: click to focus now focuses the pane under the mouse cursor #881
+* Removed: Parasio Dark color scheme; it was a duplicate of the correctly named Paraiso Dark scheme. Thanks to @adrian5! #906
+* Fixed: key repeat on Wayland now respects the system specified key repeat rate, and doesn't "stick". #669
+* Fixed: force_reverse_video_cursor wasn't correctly swapping the cursor colors in all cases. #706
+* Fixed: allow multuple IdentityFile lines in an ssh_config block to be considered
+* Improved: implement braille characters as custom glyphs, to have perfect rendering when custom_block_glyphs is enabled. Thanks to @bew!
+* Fixed: Mod3 is no longer treater as SUPER on X11 and Wayland #933
+* Fixed: paste now respects scroll_to_bottom_on_input. #931
+* New: bypass_mouse_reporting_modifiers to specify which modifier(s) override application mouse reporting mode.
+* Fixed: focus tracking events are now also generated when switching between panes #941
+* New: window_frame option to configure Wayland window decorations #761
+* New: window:get_appearance() to determine if the window has a dark mode appearance, and adjust color scheme to match #806
+* Improved: improve the new-tab button formatting. Thanks to @sdrik! #950
+* Fixed: if a line of text was exactly the width of the terminal it would get marked as wrappable even when followed by a newline, causing text to reflow incorrectly on resize. #971
+* Fixed: wezterm ssh could loop forever in the background if the connection drops and the window is closed. #857
+* Improved: VT102 conformance. Many thanks to Autumn Lamonte! #904
+* New: text_blink_rate and text_blink_rate_rapid options to control blinking text. Thanks to Autumn Lamonte! #904
+* New: Added support for Synchronized Rendering #882
+* New: wezterm now draws its own pixel-perfect versions of more block drawing glyphs. See custom_block_glyphs for more details. #584
+* Fixed: wayland: CursorNotFound error with the whiteglass theme. #532
+* Improved: Can now recover from exhausting available texture space by clearing the screen. #879
+* Updated bundled Noto Color Emoji font to version 2.028 featuring a design update. Thanks to @4cm4k1! #1003
+* Fixed: wayland: putting a window in the Sway scratchpad no longer blocks the wezterm process #884
+* Fixed: mouse reporting now correctly reports release events when multiple buttons are pressed and released at the same time. #973
+* Fixed: incorrect initial window/pty size when running with some tiling window managers. #695
+* New: CTRL-SHIFT-L shows the debug overlay, which shows the error log and a lua repl. #641
+* Fixed: macOS: bright window padding on Intel-based macs #653, #716 and #1000
+* Improved: wezterm now uses the Dual Source Blending feature of OpenGL to manage subpixel anti-aliasing alpha blending, resulting in improved appearance particularly when using a transparent window over the top of something with a light background. #932
+* Fixed: copying really long lines could falsely introduce line breaks on line wrap boundaries #874
+* New: wezterm.add_to_config_reload_watch_list function to aid with automatically reloading the config when you've split your config across multiple files. Thanks to @AusCyberman! #989
+* Improved: wezterm now respects default emoji presentation and explicit emoji variation selectors (VS15 and VS16) so that glyphs that have both textual (usually monochrome, single cell width) and emoji (color, double width) presentations can be more faithfully rendered. #997
+* New: window_background_gradient option to configure color gradients for your window background
+* New: wezterm.gradient_colors function to compute RGB values for gradients for use in your config.
+* New: color schemes: Abernathy, Ayu Mirage, darkmatrix, Fairyfloss, GitHub Dark, HaX0R_BLUE, HaX0R_GR33N, HaX0R_R3D, Mariana, matrix, Peppermint and UltraDark</releaseNotes>
+</metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
