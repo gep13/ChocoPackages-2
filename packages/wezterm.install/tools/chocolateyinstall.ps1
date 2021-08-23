@@ -6,7 +6,7 @@
 # 2. Follow the documentation below to learn how to create a package for the package type you are creating.
 # 3. In Chocolatey scripts, ALWAYS use absolute paths - $toolsDir gets you to the package's tools directory.
 $ErrorActionPreference = 'Stop'; # stop on all errors
-if((Get-CimInstance Win32_OperatingSystem).Version -lt [version]"10.0.17763") {
+if([version](Get-CimInstance Win32_OperatingSystem).Version -lt [version]"10.0.17763") {
   throw "This requires Windows 10 version 10.0.17763 at a minimum"
 }
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
