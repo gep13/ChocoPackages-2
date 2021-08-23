@@ -19,7 +19,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>wezterm</id>
-    <version>2021.08.14.124438</version>
+    <version>20210814.124438</version>
     <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/wezterm/</packageSourceUrl>
     <owners>corbob</owners>
     <title>Wez's Terminal (Install)</title>
@@ -58,7 +58,8 @@ This is a spare time project, so please bear with me.  There are a couple of cha
 
 The GitHub Discussions and Element/Gitter rooms are better suited for questions
 than bug reports, but don't be afraid to use whichever you are most comfortable
-using and we'll work it out.</description>
+using and we'll work it out.
+    </description>
     <releaseNotes>See more details at: https://wezfurlong.org/wezterm/changelog.html#20210814-124438-54e29167
 
 * Fixed: ssh client would read /etc/ssh/config rather than the proper /etc/ssh/ssh_config
@@ -129,7 +130,8 @@ using and we'll work it out.</description>
 * Improved: wezterm now respects default emoji presentation and explicit emoji variation selectors (VS15 and VS16) so that glyphs that have both textual (usually monochrome, single cell width) and emoji (color, double width) presentations can be more faithfully rendered. #997
 * New: window_background_gradient option to configure color gradients for your window background
 * New: wezterm.gradient_colors function to compute RGB values for gradients for use in your config.
-* New: color schemes: Abernathy, Ayu Mirage, darkmatrix, Fairyfloss, GitHub Dark, HaX0R_BLUE, HaX0R_GR33N, HaX0R_R3D, Mariana, matrix, Peppermint and UltraDark</releaseNotes>
+* New: color schemes: Abernathy, Ayu Mirage, darkmatrix, Fairyfloss, GitHub Dark, HaX0R_BLUE, HaX0R_GR33N, HaX0R_R3D, Mariana, matrix, Peppermint and UltraDark
+    </releaseNotes>
     <dependencies>
       <dependency id="wezterm.install" />
     </dependencies>

@@ -2,4 +2,5 @@
 /chocotests
 /builds
 *.zip
+*.exe
 _TODO.txt
