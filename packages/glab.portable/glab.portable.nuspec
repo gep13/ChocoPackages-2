@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>glab.portable</id>
+    <version>1.22.0</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/glab.portable</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>glab (Portable)</title>
+    <authors>GitLab</authors>
+    <projectUrl>https://gitlab.com/gitlab-org/cli</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/glab.png</iconUrl>
+    <copyright>2022 GitLab</copyright>
+    <licenseUrl>https://gitlab.com/gitlab-org/cli/-/blob/trunk/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://gitlab.com/gitlab-org/cli</projectSourceUrl>
+    <tags>glab gitlab</tags>
+    <summary>A GitLab CLI tool bringing GitLab to your command line</summary>
+    <description>GLab is an open source GitLab CLI tool bringing GitLab to your terminal next to where you are already working with `git` and your code without switching between windows and browser tabs. Work with issues, merge requests, **watch running pipelines directly from your CLI** among other features.
+    Inspired by `gh`, the official GitHub CLI tool.
+
+    `glab` is available for repositories hosted on GitLab.com and self-hosted GitLab Instances. `glab` supports multiple authenticated GitLab instances and automatically detects the authenticated hostname from the remotes available in the working git directory.
+    </description>
+    <releaseNotes>[Release Notes available on GitLab](https://gitlab.com/gitlab-org/cli/-/releases)</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
