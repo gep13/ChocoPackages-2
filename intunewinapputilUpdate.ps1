@@ -11,7 +11,7 @@ if ($null -eq $Current) {
     $Current = [pscustomobject]@{Version = '0.0.0' }
 }
 if ([version]($Current.Version) -lt $latestVersion) {
-    $toolsDir = Join-Path $PSScriptRoot 'intunewinapputil'
+    $toolsDir = Join-Path $PSScriptRoot 'packages\intunewinapputil'
     $nuspec = Get-ChildItem $toolsDir -Recurse -Filter '*.nuspec' | Select-Object -ExpandProperty FullName
     $install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyinstall.ps1' | Select-Object -ExpandProperty FullName
     $replacements = @(
