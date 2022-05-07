@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://api.github.com/repos/microsoft/Microsoft-Win32-Content-Prep-Tool/zipball/v1.8.2'
+$url        = 'https://api.github.com/repos/microsoft/Microsoft-Win32-Content-Prep-Tool/zipball/1.8.3'
 # Remove any prior installations.
 $foldersToRemove = Get-ChildItem -Path $toolsDir\microsoft-Microsoft-Win32-Content-Prep-Tool-* -Directory
 foreach ($folder in $foldersToRemove) {
@@ -13,7 +13,7 @@ $packageArgs = @{
   unzipLocation = $toolsDir
   url           = $url
   softwareName  = 'intunewinapputil*' 
-  checksum      = '2F8BD2D89C7FB84EEE9A27DE38E984BA72EC9A01A6E1E84420783F80E2A07E08'
+  checksum      = '6D4D2A51145AFA77559344ABBFBB30E1FE3C08CB9739BDD9B8883935A9111832'
   checksumType  = 'sha256'
 }
 
