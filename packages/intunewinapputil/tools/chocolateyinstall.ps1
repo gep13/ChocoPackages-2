@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://api.github.com/repos/microsoft/Microsoft-Win32-Content-Prep-Tool/zipball/1.8.3'
+$url        = 'https://api.github.com/repos/microsoft/Microsoft-Win32-Content-Prep-Tool/zipball/v1.8.4'
 # Remove any prior installations.
 $foldersToRemove = Get-ChildItem -Path $toolsDir\microsoft-Microsoft-Win32-Content-Prep-Tool-* -Directory
 foreach ($folder in $foldersToRemove) {
@@ -12,8 +12,8 @@ $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $toolsDir
   url           = $url
-  softwareName  = 'intunewinapputil*' 
-  checksum      = '6D4D2A51145AFA77559344ABBFBB30E1FE3C08CB9739BDD9B8883935A9111832'
+  softwareName  = 'intunewinapputil*'
+  checksum      = '7A0F8AB079CBC6008B49C6316B5316D027658B1A75317F95F99DCD2DBFE67FBF'
   checksumType  = 'sha256'
 }
 
