@@ -1,0 +1,33 @@
+name: How to use a Windows Runner on GitHub Actions
+on: push
+jobs:
+  package:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make updatedPackages directory
+        shell: pwsh
+        run: mkdir updatedPackages
+      - name: Check for intunewinapputil updates
+        shell: pwsh
+        run: ./intunewinapputilUpdate.ps1
+        if: always()
+      - name: Check for wezterm updates
+        shell: pwsh
+        run: ./weztermUpdate.ps1
+        if: always()
+      - name: Check for wezterm.install updates
+        shell: pwsh
+        run: ./wezterm.installUpdate.ps1
+        if: always()
+      - name: Check for wezterm.portable updates
+        shell: pwsh
+        run: ./wezterm.portableUpdate.ps1
+        if: always()
+      - name: Publish to Chocolatey
+        shell: pwsh
+        run: |
+          Get-ChildItem updatedPackages/*.nupkg | ForEach-Object {
+            choco push $_.FullName --source https://push.chocolatey.org/ --key {{ $PUSH_REPO_KEY }}
+          }
+        if: always()

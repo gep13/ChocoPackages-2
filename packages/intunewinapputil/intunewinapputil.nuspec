@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>intunewinapputil</id>
-    <version>1.8.4</version>
+    <version>[[VERSION]]</version>
     <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/intunewinapputil</packageSourceUrl>
     <owners>corbob</owners>
     <title>intunewinapputil (Install)</title>
