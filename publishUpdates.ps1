@@ -1,12 +1,9 @@
 param($ApiKey)
-$ExitCode = 0
-Remove-Item $env:ChocolateyInstall/logs/chocolatey.log
-Get-ChildItem updatedPackages/*.nupkg | ForEach-Object {
-    Write-Host "updatedPackages/$($_.Name)"
-    choco push "updatedPackages/$($_.Name)" --source https://push.chocolatey.org/ --key $ApiKey
-    $ExitCode += $LASTEXITCODE
-}
-if ($ExitCode -ne 0) {
-    Get-Content $env:ChocolateyInstall/logs/chocolatey.log
-    exit $ExitCode
+choco find --source updatedPackages -r | ConvertFrom-Csv -Delimiter '|' -Header Name, Version | ForEach-Object {
+    $existing = choco find $_.Name --source https://community.chocolatey.org/api/v2/ --version $_.Version --exact -r
+    if ([string]::IsNullOrWhiteSpace($existing)) {
+        choco push "updatedPackages/$($_.Name)" --source https://push.chocolatey.org/ --key $ApiKey
+    } else {
+        Write-Host "$($_.Name) is already published to Community Repository, it's likely not yet approved."
+    }
 }
