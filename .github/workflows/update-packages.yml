@@ -1,5 +1,8 @@
-name: How to use a Windows Runner on GitHub Actions
-on: push
+name: Check for updates and publish to Chocolatey if there are any
+on:
+  push:
+  schedule:
+    - cron: 15 23 * * *
 jobs:
   package:
     runs-on: windows-2019
@@ -26,8 +29,5 @@ jobs:
         if: always()
       - name: Publish to Chocolatey
         shell: pwsh
-        run: |
-          Get-ChildItem updatedPackages/*.nupkg | ForEach-Object {
-            choco push $_.FullName --source https://push.chocolatey.org/ --key {{ $PUSH_REPO_KEY }}
-          }
+        run: ./publishUpdates.ps1 -ApiKey ${{ secrets.PUSH_REPO_KEY }}
         if: always()
