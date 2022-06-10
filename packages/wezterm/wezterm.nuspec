@@ -120,4 +120,6 @@ using and we'll work it out.
       <dependency id="wezterm.install" version="[[VERSION]]" />
     </dependencies>
   </metadata>
+  <files>
+  </files>
 </package>
