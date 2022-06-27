@@ -11,10 +11,6 @@ jobs:
       - name: Make updatedPackages directory
         shell: pwsh
         run: mkdir updatedPackages
-      - name: Check for intunewinapputil updates
-        shell: pwsh
-        run: ./intunewinapputilUpdate.ps1
-        if: always()
       - name: Check for wezterm updates
         shell: pwsh
         run: ./weztermUpdate.ps1
