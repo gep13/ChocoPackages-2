@@ -23,7 +23,7 @@
     </description>
     <releaseNotes>[Release Notes available on GitLab](https://gitlab.com/gitlab-org/cli/-/releases)</releaseNotes>
     <dependencies>
-      <dependency id="glab.portable" />
+      <dependency id="glab.portable" version="[1.24.1]" />
     </dependencies>
   </metadata>
 </package>

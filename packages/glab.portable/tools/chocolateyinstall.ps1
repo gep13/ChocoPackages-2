@@ -14,3 +14,6 @@ $packageArgs = @{
   checksumType64= 'sha256'
 }
 Install-ChocolateyZipPackage @packageArgs # https://docs.chocolatey.org/en-us/create/functions/install-chocolateyzippackage
+
+# Remove any zip files from previous installs
+Remove-Item $toolsDir/*.zip
