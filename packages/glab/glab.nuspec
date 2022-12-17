@@ -6,7 +6,7 @@
     <version>1.24.1</version>
     <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/glab</packageSourceUrl>
     <owners>corbob</owners>
-    <title>glab</title>
+    <title>GitLab CLI</title>
     <authors>GitLab</authors>
     <projectUrl>https://gitlab.com/gitlab-org/cli</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/glab.png</iconUrl>
