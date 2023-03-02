@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>glab.portable</id>
-    <version>1.24.1</version>
+    <version>[[VERSION]]</version>
     <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/glab.portable</packageSourceUrl>
     <owners>corbob</owners>
     <title>GitLab CLI (Portable)</title>
@@ -21,7 +21,7 @@
 
     `glab` is available for repositories hosted on GitLab.com and self-hosted GitLab Instances. `glab` supports multiple authenticated GitLab instances and automatically detects the authenticated hostname from the remotes available in the working git directory.
     </description>
-    <releaseNotes>[Release Notes available on GitLab](https://gitlab.com/gitlab-org/cli/-/releases)</releaseNotes>
+    <releaseNotes>[Release Notes available on GitLab](https://gitlab.com/gitlab-org/cli/-/releases/v[[VERSION]])</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

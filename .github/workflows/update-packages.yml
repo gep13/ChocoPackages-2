@@ -11,6 +11,14 @@ jobs:
       - name: Make updatedPackages directory
         shell: pwsh
         run: mkdir updatedPackages
+      - name: Check for glab updates
+        shell: pwsh
+        run: ./glabUpdate.ps1
+        if: always()
+      - name: Check for glab.portable updates
+        shell: pwsh
+        run: ./glab.portableUpdate.ps1
+        if: always()
       - name: Check for wezterm updates
         shell: pwsh
         run: ./weztermUpdate.ps1
