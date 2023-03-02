@@ -4,3 +4,4 @@
 *.zip
 *.exe
 _TODO.txt
+.DS_Store

@@ -5,7 +5,7 @@
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "false",
             "installOhMyZsh": "false",
-			"username": "vscode",
+            "username": "vscode",
 			"nonFreePackages": "true"
 		},
         "ghcr.io/devcontainers/features/powershell:1": {}
@@ -13,6 +13,7 @@
 
 	"postCreateCommand": {
         "Set Shell": "sudo chsh vscode -s \"$(which pwsh)\"",
+        "Unpack Chocolatey": "sudo choco",
         "Install posh-git": "pwsh -c Install-Module posh-git -Force"
     },
 
@@ -29,7 +30,8 @@
                 "streetsidesoftware.code-spell-checker",
                 "bierner.emojisense",
                 "gep13.chocolatey-vscode",
-                "redhat.vscode-xml"
+                "redhat.vscode-xml",
+                "TylerLeonhardt.vscode-inline-values-powershell"
 			]
 		}
 	},
