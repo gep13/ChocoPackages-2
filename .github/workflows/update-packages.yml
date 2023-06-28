@@ -36,10 +36,11 @@ jobs:
         run: ./publishUpdates.ps1 -ApiKey ${{ secrets.PUSH_REPO_KEY }}
         if: always()
       - name: Keep Actions Active
+        uses: actions/checkout@v3
         with:
           ref: actions
-          run: |
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            git commit -m "Keeping Actions Alive" --allow-empty
-            git push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m "Keeping Actions Alive" --allow-empty
+          git push
