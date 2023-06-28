@@ -7,7 +7,7 @@ jobs:
   package:
     runs-on: windows-2019
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Make updatedPackages directory
         shell: pwsh
         run: mkdir updatedPackages
@@ -35,3 +35,11 @@ jobs:
         shell: pwsh
         run: ./publishUpdates.ps1 -ApiKey ${{ secrets.PUSH_REPO_KEY }}
         if: always()
+      - name: Keep Actions Active
+        with:
+          ref: actions
+          run: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git commit -m "Keeping Actions Alive" --allow-empty
+            git push
