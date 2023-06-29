@@ -45,4 +45,4 @@ jobs:
           git fetch origin actions
           git checkout actions
           git commit -m "Keeping Actions Alive" --allow-empty
-          git push origin/actions
+          git push origin actions
