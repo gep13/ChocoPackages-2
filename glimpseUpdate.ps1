@@ -1,5 +1,5 @@
 $Latest = Invoke-RestMethod 'https://api.github.com/repos/glimpse-editor/Glimpse/releases/latest'
-$Current = choco list glimpse --exact -r | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
+$Current = choco search glimpse --exact -r | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
 
 $latestVersion = [version]($Latest.tag_name -replace 'v', '')
 

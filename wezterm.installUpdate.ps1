@@ -2,7 +2,7 @@ $chocoPackage = 'wezterm.install'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 
 $Latest = Invoke-RestMethod 'https://api.github.com/repos/wez/wezterm/releases/latest'
-$Current = choco list $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
+$Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
 $latestVersion = [version](($Latest.tag_name -split '-')[0..1] -join '.')
 
 if ($null -eq $Current) {
