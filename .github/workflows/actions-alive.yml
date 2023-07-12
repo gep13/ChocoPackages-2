@@ -1,4 +1,4 @@
-name: Check for updates and publish to Chocolatey if there are any
+name: Keep GitHub Actions Alive... Because raisins
 on:
   schedule:
     - cron: 45 23 1 * *

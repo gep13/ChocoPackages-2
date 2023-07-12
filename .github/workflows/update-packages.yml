@@ -19,6 +19,10 @@ jobs:
         shell: pwsh
         run: ./glab.portableUpdate.ps1
         if: always()
+      - name: Check for liftoff updates
+        shell: pwsh
+        run: ./liftoffUpdate.ps1
+        if: always()
       - name: Check for wezterm updates
         shell: pwsh
         run: ./weztermUpdate.ps1
