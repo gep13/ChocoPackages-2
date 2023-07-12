@@ -20,6 +20,9 @@
     A client for [Lemmy](https://github.com/LemmyNet/lemmy) - a federated reddit alternative
     </description>
     <releaseNotes>[[RELEASENOTES]]</releaseNotes>
+    <dependencies>
+      <dependency id="vcredist140" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
