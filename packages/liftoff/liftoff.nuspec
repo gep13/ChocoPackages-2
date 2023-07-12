@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>liftoff</id>
+    <version>[[VERSION]]</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/liftoff/</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>Liftoff!</title>
+    <authors>Liftoff Contributors</authors>
+    <projectUrl>https://github.com/liftoff-app/liftoff</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/liftoff.png</iconUrl>
+    <copyright>Liftoff Contributors</copyright>
+    <licenseUrl>https://github.com/wez/wezterm/blob/main/LICENSE.md</licenseUrl>
+    <projectSourceUrl>https://github.com/wez/wezterm</projectSourceUrl>
+    <docsUrl>https://wezfurlong.org/wezterm/index.html</docsUrl>
+    <tags>lemmy liftoff</tags>
+    <summary>A client for lemmy</summary>
+    <description>
+    A client for [Lemmy](https://github.com/LemmyNet/lemmy) - a federated reddit alternative
+    </description>
+    <releaseNotes>[[RELEASENOTES]]</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
