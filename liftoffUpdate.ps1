@@ -1,7 +1,7 @@
 $chocoPackage = 'liftoff'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
 
-$Latest = Invoke-RestMethod 'https://api.github.com/repos/liftoff-app/liftoff/releases/latest'
+$Latest = Invoke-RestMethod 'https://api.github.com/repos/liftoff-app/liftoff/releases/v0.10.7'
 $Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
 $latestVersion = [version]($Latest.tag_name -replace 'v')
 
