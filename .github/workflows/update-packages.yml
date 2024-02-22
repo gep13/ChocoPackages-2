@@ -11,6 +11,9 @@ jobs:
       - name: Make updatedPackages directory
         shell: pwsh
         run: mkdir updatedPackages
+      - name: Install chocolatey-community-validation.extension
+        shell: pwsh
+        run: choco install chocolatey-community-validation.extension --confirm
       - name: Check for glab updates
         shell: pwsh
         run: ./glabUpdate.ps1
@@ -34,6 +37,10 @@ jobs:
       - name: Check for wezterm.portable updates
         shell: pwsh
         run: ./wezterm.portableUpdate.ps1
+        if: always()
+      - name: Check for floorp updates
+        shell: pwsh
+        run: ./floorpUpdate.ps1
         if: always()
       - name: Publish to Chocolatey
         shell: pwsh
