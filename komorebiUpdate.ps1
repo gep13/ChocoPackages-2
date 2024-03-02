@@ -40,6 +40,6 @@ if ([version]($Current.Version) -lt $latestVersion) {
     foreach ($currReplacement in $replacements) {
         (Get-Content $currReplacement.file).Replace($currReplacement.toReplace, $currReplacement.replaceWith) | Set-Content $currReplacement.file
     }
-    choco pack $nuspec --output-directory "'$($env:TEMP)'"
-    choco push $((Get-ChildItem $env:TEMP -Filter glimpse.*.nupkg).FullName) -s https://push.chocolatey.org
+
+    choco pack $nuspec --output-directory "'$PSScriptRoot\updatedPackages'"
 }
