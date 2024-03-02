@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>komorebi</id>
+    <version>[[VERSION]]</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/komorebi</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>komorebi</title>
+    <authors>LGUG2Z</authors>
+    <projectUrl>https://github.com/LGUG2Z/komorebi</projectUrl>
+    <licenseUrl>https://github.com/LGUG2Z/komorebi/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/LGUG2Z/komorebi</projectSourceUrl>
+    <releaseNotes>https://github.com/LGUG2Z/komorebi/releases/</releaseNotes>
+    <tags>komorebi tiling windows manager</tags>
+    <summary>A tiling window manager for Windows</summary>
+    <description><![CDATA[Tiling Window Management for Windows.
+      ![screenshot](https://i.ibb.co/BTqNS45/komorebi.png)
+      _komorebi_ is a tiling window manager that works as an extension to
+      Microsoft's [Desktop Window Manager](https://docs.microsoft.com/en-us/windows/win32/dwm/dwm-overview) in Windows 10 and
+      above.
+      _komorebi_ allows you to control application windows, virtual workspaces and display monitors with a CLI which can be
+      used with third-party software such as [AutoHotKey](https://github.com/Lexikos/AutoHotkey_L) to set user-defined
+      keyboard shortcuts.
+      ]]></description>
+  </metadata>
+  <files>
+    <file src="tools\chocolateyInstall.ps1" target="tools" />
+  </files>
+</package>
