@@ -46,6 +46,10 @@ jobs:
         shell: pwsh
         run: ./komorebiUpdate.ps1
         if: always()
+      - name: Check for whkd updates
+        shell: pwsh
+        run: ./whkdUpdate.ps1
+        if: always()
       - name: Publish to Chocolatey
         shell: pwsh
         run: ./publishUpdates.ps1 -ApiKey ${{ secrets.PUSH_REPO_KEY }}

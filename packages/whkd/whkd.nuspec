@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>whkd</id>
+    <version>[[VERSION]]</version>
+    <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/whkd</packageSourceUrl>
+    <owners>corbob</owners>
+    <title>komorebi</title>
+    <authors>LGUG2Z</authors>
+    <projectUrl>https://github.com/LGUG2Z/whkd</projectUrl>
+    <licenseUrl>https://github.com/LGUG2Z/whkd/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/LGUG2Z/whkd</projectSourceUrl>
+    <releaseNotes>https://github.com/LGUG2Z/whkd/releases/</releaseNotes>
+    <tags>simple hotkey daemon</tags>
+    <summary>A simple hotkey daemon for Windows</summary>
+    <description><![CDATA[# whkd
+
+      _whkd_ is a simple hotkey daemon for Windows that reacts to input events by executing commands.
+
+      Its configuration file (`whkdrc`) is a series of bindings which define the associations between the input events and the commands.
+      By default, this file should be located in `~/.config/`, or an alternative can be set using the environment variable `WHKD_CONFIG_HOME`.
+
+      If you are compiling from the `master` branch, a `--config` flag is also available, which, when used, overrides
+      the `WHKD_CONFIG_HOME` environment variable. This flag will be made available in v0.1.3+.
+
+      The format of the configuration file (and this project itself) is heavily inspired by `skhd` and `sxhkd`.
+
+      ## Example
+
+      ```
+      .shell pwsh # can be one of cmd | pwsh | powershell
+
+      # Specify different behaviour depending on the app
+      alt + n [
+          # ProcessName as shown by `Get-Process`
+          Firefox       : echo "hello firefox"
+
+          # Spaces are fine, no quotes required
+          Google Chrome : echo "hello chrome"
+      ]
+
+      # reload configuration
+      alt + o : taskkill /f /im whkd.exe && Start-Process whkd -WindowStyle hidden
+
+      # app shortcuts
+      alt + f : if ($wshell.AppActivate('Firefox') -eq $False) { start firefox }
+
+      # focus windows with komorebi
+      alt + h : komorebic focus left
+      alt + j : komorebic focus down
+      alt + k : komorebic focus up
+      alt + l : komorebic focus right
+      ```
+      ]]></description>
+  </metadata>
+  <files>
+    <file src="tools\chocolateyInstall.ps1" target="tools" />
+  </files>
+</package>
