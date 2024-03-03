@@ -5,7 +5,7 @@
     <version>[[VERSION]]</version>
     <packageSourceUrl>https://github.com/corbob/ChocoPackages/tree/master/packages/whkd</packageSourceUrl>
     <owners>corbob</owners>
-    <title>komorebi</title>
+    <title>whkd</title>
     <authors>LGUG2Z</authors>
     <projectUrl>https://github.com/LGUG2Z/whkd</projectUrl>
     <licenseUrl>https://github.com/LGUG2Z/whkd/blob/master/LICENSE</licenseUrl>
