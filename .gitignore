@@ -3,5 +3,6 @@
 /builds
 *.zip
 *.exe
+*.msi
 _TODO.txt
 .DS_Store
