@@ -19,3 +19,8 @@ $packageArgs = @{
 }
 
 Install-ChocolateyPackage @packageArgs
+
+# Create the needed LocalAppData directory. Without this komorebi will fail to launch.
+New-Item -Path "$Env:LOCALAPPDATA\komorebi" -ItemType Directory -ErrorAction SilentlyContinue
+
+Write-Host "komorebi is installed. If this is your first time using it, you may want to run 'komorebic quickstart' to download the quick start configurations."
