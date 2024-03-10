@@ -13,7 +13,7 @@ jobs:
         run: mkdir updatedPackages
       - name: Install chocolatey-community-validation.extension
         shell: pwsh
-        run: choco install chocolatey-community-validation.extension --confirm
+        run: choco install chocolatey-community-validation.extension --confirm --trace --debug
       - name: Check for glab updates
         shell: pwsh
         run: ./glabUpdate.ps1
