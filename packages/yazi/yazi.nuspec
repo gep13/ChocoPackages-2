@@ -50,6 +50,6 @@ https://github.com/sxyazi/yazi/assets/17523360/92ff23fa-0cd5-4f04-b387-894c12265
     <releaseNotes>[Release Notes available on GitHub](https://github.com/sxyazi/yazi/releases/tag/v[[VERSION]])</releaseNotes>
   </metadata>
   <files>
-    <file src="tools\**" target="tools" />
+    <file src="tools\chocolateyInstall.ps1" target="tools" />
   </files>
 </package>
