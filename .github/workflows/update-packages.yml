@@ -50,6 +50,10 @@ jobs:
         shell: pwsh
         run: ./whkdUpdate.ps1
         if: always()
+      - name: Check for yazi updates
+        shell: pwsh
+        run: ./yaziUpdate.ps1
+        if: always()
       - name: Check for browser-tamer updates
         shell: pwsh
         run: ./browser-tamerUpdate.ps1
