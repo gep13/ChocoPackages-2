@@ -10,7 +10,7 @@
     <authors>sxyazi</authors>
     <projectUrl>https://yazi-rs.github.io/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/corbob/ChocoPackages@master/icons/yazi.png</iconUrl>
-    <copyright></copyright>
+    <copyright>2024 Yazi</copyright>
     <licenseUrl>https://github.com/sxyazi/yazi/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/sxyazi/yazi/</projectSourceUrl>
