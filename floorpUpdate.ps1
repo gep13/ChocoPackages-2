@@ -11,12 +11,9 @@ if ($null -eq $Current) {
 
 if ([version]($Current.Version) -lt $latestVersion) {
     $latestAsset64 = $latest.assets | Where-Object name -match 'win64'
-    $latestAsset32 = $latest.assets | Where-Object name -match 'win32'
     $toolsDir = Join-Path $PSScriptRoot "packages/$chocoPackage"
     [System.Net.WebClient]::new().DownloadFile($latestAsset64.browser_download_url, "$toolsDir/$chocoPackage-win64.exe")
-    [System.Net.WebClient]::new().DownloadFile($latestAsset32.browser_download_url, "$toolsDir/$chocoPackage-win32.exe")
     $checksums64 = Get-FileHash "$toolsDir/$chocoPackage-win64.exe" -Algorithm SHA256
-    $checksums32 = Get-FileHash "$toolsDir/$chocoPackage-win32.exe" -Algorithm SHA256
     $nuspec = Get-ChildItem $toolsDir -Recurse -Filter '*.nuspec' | Select-Object -ExpandProperty FullName
     $install = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyinstall.ps1' | Select-Object -ExpandProperty FullName
     $VerificationFile = Get-ChildItem $toolsDir -Recurse -Filter 'VERIFICATION.txt' | Select-Object -ExpandProperty FullName
@@ -25,11 +22,6 @@ if ([version]($Current.Version) -lt $latestVersion) {
             toReplace   = '[[VERSION]]'
             replaceWith = $latestVersion
             file        = $nuspec
-        },
-        @{
-            toReplace   = '[[URL32]]'
-            replaceWith = $latestAsset32.browser_download_url
-            file        = $install
         },
         @{
             toReplace   = '[[URL64]]'
@@ -41,11 +33,6 @@ if ([version]($Current.Version) -lt $latestVersion) {
             replaceWith = ($checksums64 | Where-Object algorithm -eq SHA256).hash
             file        = $install
         },
-        @{
-            toReplace   = '[[CHECKSUM32]]'
-            replaceWith = ($checksums32 | Where-Object algorithm -eq SHA256).hash
-            file        = $install
-        }
         @{
             toReplace   = '[[RELEASENOTES]]'
             replaceWith = $Latest.body
