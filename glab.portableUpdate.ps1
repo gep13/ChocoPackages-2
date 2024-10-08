@@ -1,5 +1,7 @@
 $chocoPackage = 'glab.portable'
 $chocoSource = 'https://community.chocolatey.org/api/v2/'
+$32bitMatch = '386'
+$64bitMatch = 'amd64'
 
 $Latest = (Invoke-RestMethod 'https://gitlab.com/api/v4/projects/34675721/releases' | Sort-Object releases -Descending)[0]
 $Current = choco search $chocoPackage --exact -r --source $chocoSource | ConvertFrom-Csv -Delimiter '|' -Header 'Name', 'Version'
@@ -17,8 +19,8 @@ if ([version]($Current.Version) -lt $latestVersion) {
     foreach ($zipFile in $latestAssets) {
         [System.Net.WebClient]::new().DownloadFile($zipFile.direct_asset_url, "$tempDir/$($zipFile.name)")
     }
-    $checksum = Get-FileHash "$tempDir/*i386.zip" -Algorithm SHA256
-    $checksum64 = Get-FileHash "$tempDir/*x86_64.zip" -Algorithm SHA256
+    $checksum = Get-FileHash "$tempDir/*$32bitMatch.zip" -Algorithm SHA256
+    $checksum64 = Get-FileHash "$tempDir/*$64bitMatch.zip" -Algorithm SHA256
     $nuspec = Get-ChildItem $toolsDir -Recurse -Filter '*.nuspec' | Select-Object -ExpandProperty FullName
     $chocolateyInstall = Get-ChildItem $toolsDir -Recurse -Filter 'chocolateyinstall.ps1' | Select-Object -ExpandProperty FullName
     $replacements = @(
@@ -29,12 +31,12 @@ if ([version]($Current.Version) -lt $latestVersion) {
         }
         @{
             toReplace   = '[[URL]]'
-            replaceWith = $latestAssets.direct_asset_url | Where-Object { $_ -match 'i386' }
+            replaceWith = $latestAssets.direct_asset_url | Where-Object { $_ -match $32bitMatch }
             file        = $chocolateyInstall
         }
         @{
             toReplace   = '[[URL64]]'
-            replaceWith = $latestAssets.direct_asset_url | Where-Object { $_ -match 'x86_64' }
+            replaceWith = $latestAssets.direct_asset_url | Where-Object { $_ -match $64bitMatch }
             file        = $chocolateyInstall
         }
         @{
